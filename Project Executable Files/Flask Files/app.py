@@ -27,7 +27,7 @@ def prediction():
 def predict():
     try:
         input_features = [transform_input(value) for value in request.form.values()]
-        prediction_test = input_features[4] and input_features[3]
+        prediction_test = input_features[4] or input_features[3]
         prediction = model.predict([input_features])
         prediction_new = prediction[0]
         output = prediction_test
